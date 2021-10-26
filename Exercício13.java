@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 public class Exercício13 {
 
@@ -6,11 +5,15 @@ public class Exercício13 {
 		
 		Scanner entrada = new Scanner(System.in); 
 		
-		final int TAM = 3;
-		int idade[] = new int [TAM];
-		float altura[] = new float [TAM];
+		final int TAM = 5;
+		int vetoridade[] = new int [TAM];
+		float vetoraltura[] = new float [TAM];
 		int menoridade = 99;
-		int maioridade = 0;
+		int maioridade = 0; 
+		int idadeinversa=0;
+		int	idademaisbaixo=0;
+		int idademaisalto=0;
+		float alturainversa=0;
 		float maioraltura = 0;
 		float menoraltura = 0;
 		float mediaaltura = 0;
@@ -24,103 +27,110 @@ public class Exercício13 {
 		
 		for (int i = 0; i < TAM; i++) {
 			System.out.print("Digite sua idade: ");
-			idade[i] = entrada.nextInt();
+				vetoridade[i] = entrada.nextInt();
 			System.out.print("Informe sua altura: ");
-			altura[i] = entrada.nextFloat();
+				vetoraltura[i] = entrada.nextFloat();
 			
-
-		somaAltura = somaAltura + altura[i];
-		somaIdade = somaIdade + idade[i];
-		}
+	
+		somaAltura = somaAltura + vetoraltura[i];
+		somaIdade = somaIdade + vetoridade[i];
 		
+		}
+			
 		mediaaltura = somaAltura / TAM;
 		mediaIdade = somaIdade / TAM ;
-		
+	
+		System.out.println("A idade das pessoas na ordem inversa é: ");
+		for (int j = vetoridade.length - 1; j >= 0; j--) {
+			idadeinversa=(vetoridade[j]);
+			System.out.print(idadeinversa+",");
+		}
+			
+		System.out.println("\nA altura das pessoas na ordem inversa é: ");
+		for (int j = vetoraltura.length - 1; j >= 0; j--) {
+			alturainversa=(vetoraltura[j]);
+			System.out.print(alturainversa+",");
+			
+		}
+			
 		for (int i = 0; i < TAM; i++) {
 			if (i==0) {
-				maioridade=idade[i];
-				menoridade=idade[i];
+				maioridade=vetoridade[i];
+			float alturamaisvelho=vetoraltura[i];
+				menoridade=vetoridade[i];
+			float alturamaisnovo= vetoraltura[i];	
 			} 
-			
+		
 			else {
-				if (idade[i] < menoridade) {
-					menoridade = idade[i];
+				if (vetoridade[i] < menoridade) {
+					menoridade = vetoridade[i];
+				float alturamaisnovo= vetoraltura[i];
 				}
-				if (idade[i] > maioridade) {
-					maioridade = idade[i];
-				}            
-		}
-			System.out.println(i--);
+				
+				if (vetoridade[i] > maioridade) {
+					maioridade = vetoridade[i];
+				float alturamaisnovo= vetoraltura[i];
+				}      
+				
+			}	
 		}
 		
-		
+		System.out.println("\nA pessoa mais nova tem: " +menoridade+".");
+    	System.out.println("A pessoa mais velha tem: " +maioridade+ ".");
+
+			
         for ( int i = 0; i < TAM; i++) {
         	if (i==0) {
-				maioraltura=altura[i];
-				menoraltura=altura[i];
+				maioraltura=vetoraltura[i];
+				idademaisalto=vetoridade[i];
+				menoraltura=vetoraltura[i];
+				idademaisbaixo=vetoridade[i];
 			} 
-			
 			else {        	
-        	
-				if (altura[i] < menoraltura) {
-					menoraltura = altura[i];
+        		if (vetoraltura[i] < menoraltura) {
+					menoraltura = vetoraltura[i];
+					idademaisbaixo=vetoridade[i];
 				}
-				if (altura[i] > maioraltura) {
-					maioraltura = altura[i];
-        	}
+				if (vetoraltura[i] > maioraltura) {
+					maioraltura = vetoraltura[i];
+					idademaisalto=vetoridade[i];
+				}
+			}
         }
-        }
+        System.out.println("A pessoa mais baixa tem: " +menoraltura+ "m."+" e a sua idade é "+idademaisbaixo);
+    	System.out.println("A pessoa mais alta tem: " +maioraltura+ "m."+" e a sua idade é "+idademaisalto);
+    	
 		for (int i = 0; i < TAM; i++) {
 			if (i==0) {
-				mediaidadeabaixo=idade[i];
-				mediaidadeacima=idade[i];
-			} 
-			
-			else {
-				
-				if (idade[i] < mediaIdade) {
-					mediaidadeabaixo = idade[i];
+				mediaidadeabaixo=vetoridade[i];
+				mediaidadeacima=vetoridade[i];
+		} 
+			else if (vetoridade[i] < mediaIdade) {
+				mediaidadeabaixo = vetoridade[i];
             }
             else {
-            	mediaidadeacima = idade[i];
-                }
+            	mediaidadeacima = vetoridade[i];
+            }
 		}
-		}
+		
 		for (int i = 0; i < TAM; i++) {
 			if (i==0) {
-				mediaaltabaixo=altura[i];
-				mediaaltacima=altura[i];
+				mediaaltabaixo=vetoraltura[i];
+				mediaaltacima=vetoraltura[i];
 			} 
-            if (altura[i] < mediaaltura) {
-            	mediaaltabaixo = altura[i];
+			else if (vetoraltura[i] < mediaaltura) {
+            	mediaaltabaixo = vetoraltura[i];
             }
             else {
-            	mediaaltacima = altura[i];
-                }
+            	mediaaltacima = vetoraltura[i];
+            }
 		}
-        
-        
-
-            
-        	System.out.println("Ordem lida: ");
-        	System.out.println("As idades dos usuários são: "+Arrays.toString(idade));
-        	System.out.println("As alturas dos usuários são: "+Arrays.toString(altura));
-        	System.out.println("A pessoa mais baixa informada, tem: " +menoraltura+ "metro(s) de altura");
-        	System.out.println("A pessoa mais alta informada, tem: " +maioraltura+ "metro(s) de altura");
-
-			System.out.println("Ordem inversa: ");
-			System.out.println("As alturas dos usuáriso são: "+Arrays.toString(altura));
-			System.out.println("As idades dos usuários são: "+Arrays.toString(idade));
-			System.out.println("A pessoa mais baixa informada, tem: " +menoraltura+ "metro(s) de altura");
-        	System.out.println("A pessoa mais alta informada, tem: " +maioraltura+ "metro(s) de altura");
-        	System.out.println("As pessoas que estão acima da média de altura são: "+mediaaltacima);
+            System.out.println("A altura que está acima da média é: "+mediaaltacima);
         	System.out.println("As pessoas que estão abaixo da média de altura são: "+mediaaltabaixo);
         	System.out.println("As pessoas que estão acima da média de idade são: "+mediaidadeacima);
-        	System.out.println("As pessoas que estão abaixo da média de idade são: "+mediaidadeabaixo);
-        	
-		
-		
-		entrada.close();
+        	System.out.println("As pessoas que estão abaixo da média de idade são: "+mediaidadeabaixo);		
+
+        	entrada.close();
 
 	}
 
