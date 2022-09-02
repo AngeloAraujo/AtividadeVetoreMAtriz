@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
-public class Exercício9 {
+public class Ex8 {
 
 	public static void main(String[] args) {
 
@@ -35,13 +35,15 @@ public class Exercício9 {
 				while(randomSenha!='a'&& randomSenha!='e'&& randomSenha!='i'&& randomSenha!='o'&& randomSenha!='u');
 				senha=senha+randomSenha;
 		}
+			System.out.println("Senha: "+senha);
+			entrada.close();
+		}
 }
 			
-		System.out.println("Senha: "+senha);
-			
-		entrada.close();
+		
+		
 					
 }
-}
+
 
 

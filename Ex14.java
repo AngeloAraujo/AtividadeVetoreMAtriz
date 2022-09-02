@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class Exercício15 {
+public class Ex14 {
 
 	public static void main(String[] args) {
 
 		Scanner entrada= new Scanner(System.in);
 		
-		final int TAM = 3;
+		final int TAM = 30;
 		int idade[] = new int [TAM];
 		float altura[] = new float [TAM];
 		float soma = 0; 

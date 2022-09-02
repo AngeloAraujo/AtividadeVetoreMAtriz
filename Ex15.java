@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Exercício16 {
+public class Ex15 {
 
 	public static void main(String[] args) {
 		
