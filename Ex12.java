@@ -1,11 +1,11 @@
 import java.util.Scanner;
-public class Exercício13 {
+public class Ex12 {
 
 	public static void main(String[] args) {
 		
 		Scanner entrada = new Scanner(System.in); 
 		
-		final int TAM = 5;
+		final int TAM = 3;
 		int vetoridade[] = new int [TAM];
 		float vetoraltura[] = new float [TAM];
 		int menoridade = 99;
@@ -24,6 +24,8 @@ public class Exercício13 {
 		float mediaidadeabaixo = 0;
 		float mediaaltacima = 0;
 		float mediaaltabaixo = 0;
+		float alturamaisnovo=0;
+		float alturamaisvelho=0;
 		
 		for (int i = 0; i < TAM; i++) {
 			System.out.print("Digite sua idade: ");
@@ -40,43 +42,31 @@ public class Exercício13 {
 		mediaaltura = somaAltura / TAM;
 		mediaIdade = somaIdade / TAM ;
 	
-		System.out.println("A idade das pessoas na ordem inversa é: ");
-		for (int j = vetoridade.length - 1; j >= 0; j--) {
-			idadeinversa=(vetoridade[j]);
-			System.out.print(idadeinversa+",");
-		}
-			
-		System.out.println("\nA altura das pessoas na ordem inversa é: ");
-		for (int j = vetoraltura.length - 1; j >= 0; j--) {
-			alturainversa=(vetoraltura[j]);
-			System.out.print(alturainversa+",");
-			
-		}
 			
 		for (int i = 0; i < TAM; i++) {
 			if (i==0) {
 				maioridade=vetoridade[i];
-			float alturamaisvelho=vetoraltura[i];
+				alturamaisvelho=vetoraltura[i];
 				menoridade=vetoridade[i];
-			float alturamaisnovo= vetoraltura[i];	
+				alturamaisnovo= vetoraltura[i];	
 			} 
 		
 			else {
 				if (vetoridade[i] < menoridade) {
 					menoridade = vetoridade[i];
-				float alturamaisnovo= vetoraltura[i];
+				    alturamaisnovo= vetoraltura[i];
 				}
 				
 				if (vetoridade[i] > maioridade) {
 					maioridade = vetoridade[i];
-				float alturamaisnovo= vetoraltura[i];
+					alturamaisnovo= vetoraltura[i];
 				}      
 				
 			}	
 		}
 		
-		System.out.println("\nA pessoa mais nova tem: " +menoridade+".");
-    	System.out.println("A pessoa mais velha tem: " +maioridade+ ".");
+		System.out.println("\nA pessoa mais nova tem: " +menoridade+" e a sua altura é "+ alturamaisnovo+ ".");
+    	System.out.println("A pessoa mais velha tem: " +maioridade+" e a sua altura é "+ alturamaisvelho+ ".");
 
 			
         for ( int i = 0; i < TAM; i++) {
@@ -125,12 +115,26 @@ public class Exercício13 {
             	mediaaltacima = vetoraltura[i];
             }
 		}
-            System.out.println("A altura que está acima da média é: "+mediaaltacima);
-        	System.out.println("As pessoas que estão abaixo da média de altura são: "+mediaaltabaixo);
-        	System.out.println("As pessoas que estão acima da média de idade são: "+mediaidadeacima);
-        	System.out.println("As pessoas que estão abaixo da média de idade são: "+mediaidadeabaixo);		
+		System.out.println("A idade das pessoas na ordem inversa é: ");
+		for (int j = vetoridade.length - 1; j >= 0; j--) {
+			idadeinversa=(vetoridade[j]);
+			System.out.print(idadeinversa+",");
+		}
+			
+		System.out.println("\nA altura das pessoas na ordem inversa é: ");
+		for (int j = vetoraltura.length - 1; j >= 0; j--) {
+			alturainversa=(vetoraltura[j]);
+			System.out.print(alturainversa+",");
+			
+		}
+		
+		System.out.println();
+        System.out.println("A altura que está acima da média é: "+mediaaltacima);
+        System.out.println("As pessoas que estão abaixo da média de altura são: "+mediaaltabaixo);
+        System.out.println("As pessoas que estão acima da média de idade são: "+mediaidadeacima);
+        System.out.println("As pessoas que estão abaixo da média de idade são: "+mediaidadeabaixo);		
 
-        	entrada.close();
+        entrada.close();
 
 	}
 

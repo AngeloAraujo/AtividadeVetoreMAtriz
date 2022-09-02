@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
-public class Exercício10 {
+public class Ex09 {
 
 	public static void main(String[] args) {
 
@@ -11,8 +11,8 @@ public class Exercício10 {
 
 		char letras[] = new char[texto.length()];
 
-		for (int k = 0; k < letras.length; k++) {
-			letras[k] = texto.charAt(k);
+		for (int i = 0; i < letras.length; i++) {
+			letras[i] = texto.charAt(i);
 		}
 
 		System.out.println(Arrays.toString(letras));
