@@ -1,45 +1,45 @@
 import java.util.Scanner;
 
-public class Exercício6 {
+public class Ex6 {
 
 	
 	public static void main(String[] args) {
 		
 		Scanner entrada = new Scanner(System.in);
 		
-		int c;
 		int quantidadepar = 0;
 		int quantidadeimpar = 0;
 		final int TAM= 20;
-		int pospar=0,posimpar=0;
+		int pospar=0;
+		int posimpar=0;
 		
 		int [] num=new int [TAM];
 		
-		for( c = 0; c < TAM; c++) {
+		for( int i = 0; i < TAM; i++) {
 			System.out.println("Digite um número: ");
-		    num[c] = entrada.nextInt();
+		    num[i] = entrada.nextInt();
 		}   
 		
 		System.out.println("Vetor: ");
-		for(c = 0; c < TAM; c++) {
-		  if (num[c] % 2 == 0) {
+		for(int i = 0; i < TAM; i++) {
+		  if (num[i] % 2 == 0) {
 			  quantidadepar ++;
 		  }
-		  else if(num[c] % 2 != 0) {
+		  else if(num[i] % 2 != 0) {
 			  quantidadeimpar++;
 		  }
-		  System.out.println(num[c]+" ");
+		  System.out.println(num[i]+" ");
 		}
 		int[] pares = new int [quantidadepar];
 		int[] impares = new int [quantidadeimpar];
 		
-		for(c = 0; c < TAM; c++) {
-			if (num[c] % 2 == 0) {
-				pares[pospar] = num[c];
+		for(int i = 0; i < TAM; i++) {
+			if (num[i] % 2 == 0) {
+				pares[pospar] = num[i];
 				pospar++;
 			}
-			else if(num[c] % 2 != 0) {
-			 impares[posimpar] = num[c];
+			else if(num[i] % 2 != 0) {
+			 impares[posimpar] = num[i];
 			 posimpar++;
 			}
 		}

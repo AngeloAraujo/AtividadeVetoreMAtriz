@@ -2,7 +2,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Scanner;
-public class Exercício11 {
+public class Ex11 {
 
 	public static void main(String[] args) {
 	
